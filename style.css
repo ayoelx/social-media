@@ -20,6 +20,7 @@
 
     /* Dark Theme   */
     --Toggle-dark: linear-gradient(
+        to right,
         hsl(210, 78%, 56%),
         hsl(146, 68%, 55%)
     );
@@ -91,6 +92,10 @@ header::before {
     z-index: -1;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+hr {
+    display: none;
 }
 
 h1 {
@@ -213,7 +218,7 @@ h4 {
 /* OVERVIEW */
 
 h2 {
-    color: var(--White);
+    color: var(--Dark-Grayish-Blue);
     margin: 40px 0 20px;
 }
 
@@ -271,6 +276,10 @@ body.dark {
     background-color: var(--Very-Dark-Blue-Top);
 }
 
+.dark h2 {
+    color: var(--White);
+}
+
 .dark h3,
 .dark h4,
 .dark .box p,
@@ -282,7 +291,34 @@ body.dark {
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 850px) {
-    .boxes .flex {
+
+    header .container {
         flex-direction: column;
+        align-items: stretch;
+    }
+
+    hr {
+        display: block;
+        margin: 20px 0;
+        border: solid 1px var(--Toggle-light);
+        border-style: solid;
+    }
+
+    .boxes {
+        flex-direction: column;
+    }
+
+    .large .box {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .overview .boxes {
+        grid-template: repeat(8, 125px) / 100%;
+        row-gap: 2%;
     }
 }
