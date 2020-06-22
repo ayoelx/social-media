@@ -230,7 +230,7 @@ h3 {
     display: grid;
     grid-template: 125px 125px / repeat(4, 1fr);
     column-gap: 4%;
-    row-gap: 10%;
+    row-gap: 25px;
 }
 
 .overview .box {
